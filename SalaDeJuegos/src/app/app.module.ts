@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, 
   MatMenuModule, MatPaginatorModule } from  '@angular/material';
 import {DemoMaterialModule} from './material-module';
@@ -98,7 +98,8 @@ import { SexoPipe } from './pipes/sexo.pipe';
     MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, 
     MatIconModule, MatMenuModule,
     BrowserAnimationsModule, MatPaginatorModule,DemoMaterialModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)

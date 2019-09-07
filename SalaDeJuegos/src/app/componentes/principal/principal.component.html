@@ -1,79 +1,70 @@
 <app-cabecera> </app-cabecera>
 <div class="container">
-  <a routerLink="/Juegos">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Juegos</mat-card-title>
-        <mat-card-subtitle>Los mejores juegos.</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/imagenes/juegos.jpg" alt="Juegos">
-      <mat-card-content>
-        <p>
-          El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los
-          estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien
-          de los temas impartidos por los docentes utilizando el juego.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </a>
-  <a routerLink="/Listado">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Listados de resultados</mat-card-title>
-        <mat-card-subtitle>Los listados de los resultados con ordenamiento y busqueda.</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="./assets/imagenes/resultados.png" alt="Resultados">
-      <mat-card-content>
-        <p>
-          Encuentre los resultados de todos sus juegos en este apartado.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </a>
-  <a routerLink="#">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Configuraci&oacute;n</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="./assets/imagenes/Configuracion.png" alt="Resultados">
-      <mat-card-content>
-        <p>
-          Ajustes de la aplicacion y los métodos de autentificación
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </a>
-  <a routerLink="/Jugadores">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Jugadores</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="./assets/imagenes/jugadores.jpg" alt="Resultados">
-      <mat-card-content>
-        <p>
-            Listado de jugadores
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </a>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <a routerLink="/Juegos">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Juegos</mat-card-title>
+          </mat-card-header>
+          <img class="cardImg" mat-card-lg-image src="../../../assets/imagenes/juegos-card.png" alt="Juegos">
+          <mat-card-content>
+            <p>
+              El método lúdico es un conjunto de estrategias.
+            </p>
+          </mat-card-content>
+          <mat-card-footer>
+          </mat-card-footer>
+        </mat-card>
+      </a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <a routerLink="/Listado">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Listados de resultados</mat-card-title>
+          </mat-card-header>
+          <img class="cardImg" mat-card-lg-image src="./assets/imagenes/resultados-card.png" alt="Resultados">
+          <mat-card-content>
+            <p>
+              Los listados de los resultados con ordenamiento y busqueda.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <a routerLink="#">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Configuraci&oacute;n</mat-card-title>
+          </mat-card-header>
+          <img class="cardImg" mat-card-lg-image src="./assets/imagenes/configuracion-card.png" alt="Resultados">
+          <mat-card-content>
+            <p>
+              Ajustes de la aplicacion y los métodos de autentificación
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <a routerLink="/Jugadores">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Jugadores</mat-card-title>
+          </mat-card-header>
+          <img class="cardImg" mat-card-lg-image src="./assets/imagenes/jugadores-card.png" alt="Resultados">
+          <mat-card-content>
+            <p>
+              Listado de jugadores
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
