@@ -1,8 +1,15 @@
 .imagenDeMenu{
-width: 80px;
-height: 70px;
+    width: 80px;
+    height: 70px;
 }
-
+.container{
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
 .hero-text {
     text-align: center;
     position: absolute;
@@ -10,4 +17,14 @@ height: 70px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #100000;
-    }
+}
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.example-card {
+    margin-left: 35%;
+    margin-right: 10%;
+    margin-top: 10px;
+  }

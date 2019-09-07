@@ -1,4 +1,6 @@
-<mat-toolbar color="primary">
+<script src="https://kit.fontawesome.com/cbba53a205.js"></script>
+<img src="../../../assets/imagenes/header2.png" class="responsive">
+<mat-toolbar class="color">
   <span class="fill-remaining-space">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
@@ -26,9 +28,9 @@
       </a>
     </mat-menu>
   </span>
-  <span class="fill-remaining-space">Sala de Juegos</span>
-  <a routerLink="/QuienSoy">Quien Soy? <i class="fa fa-user"></i></a>
-  <a href="https://github.com/octaviovillegas" target="_blank">en GitHub <i class="fa fa-github"></i></a>
-  <a routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a>
-  <a routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a>
+  <span class="fill-remaining-space tituloNav"><p>SALA DE JUEGOS</p></span>
+  <span class="fill-some-remaining-space"><a title="¿Quien Soy?" routerLink="/QuienSoy"> <i class="fas fa-id-badge fa-2x"></i></a></span>
+  <span class="fill-some-remaining-space"><a title="Encuentrame en GitHub!" href="https://github.com/CanteroAgustin" target="_blank"> <i class="fab fa-github-alt fa-2x"></i></a></span>
+  <span class="fill-some-remaining-space"><a routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></span>
+  <span class="fill-some-remaining-space"><a routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></span>
 </mat-toolbar>
