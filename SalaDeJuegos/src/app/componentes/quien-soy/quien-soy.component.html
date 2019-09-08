@@ -1,79 +1,114 @@
 <app-cabecera> </app-cabecera>
 <div class="container">
   <mat-toolbar>
-    <mat-button-toggle (click)="url('./QuienSoy#quien')" class="fill-remaining-space">¿Quien soy?</mat-button-toggle>
-    <mat-button-toggle (click)="url('./QuienSoy#que')" class="fill-remaining-space">¿Ques es?</mat-button-toggle>
-    <mat-button-toggle (click)="url('./QuienSoy#donde')" class="fill-remaining-space">¿Donde?</mat-button-toggle>
+    <mat-button-toggle (click)="scroll(quien)" class="fill-remaining-space">¿Quien soy?</mat-button-toggle>
+    <mat-button-toggle (click)="scroll(que)" class="fill-remaining-space">¿Ques es?</mat-button-toggle>
+    <mat-button-toggle (click)="url('./QuienSoy#donde')" class="fill-remaining-space">¿Dónde Funciona?
+    </mat-button-toggle>
   </mat-toolbar>
 
-  <mat-card>
-    <mat-card-header>
-      <img mat-card-avatar src="../../../assets/imagenes/avatar.jpg">
-      <mat-card-title>¿Quien Soy?</mat-card-title>
-    </mat-card-header>
-    <mat-card-title>
-      <span>Agustin Cantero</span>
-    </mat-card-title>
-
-    <img mat-card-image src="../../../assets/imagenes/yo.jpg" alt="yo" ALIGN="left">
-    <mat-card-content>
-      <mat-list>
-        <mat-list-item> Mi nombre es Agustin Cantero, soy un estudiante de la tecnicatura en programacion de la Utn
-          Facultad Regional de Avellaneda. </mat-list-item>
-        <mat-list-item> Soy oriundo de Bahia Blanca Provincia de Buenos Aires. </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-
-
-  <!-- First Container -->
-  <div id="quiwn" class="container-fluid text-center">
-    <h1 class="margin">Quién Soy?</h1>
-    <img src="./assets/imagenes/quiensoy.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird"
-      width="350" height="350">
-    <h3>Soy Un alumno de la UTN FRA</h3>
+  <div #quien>
+    <mat-card>
+      <mat-card-header>
+        <img mat-card-avatar src="../../../assets/imagenes/avatar.jpg">
+        <mat-card-title>
+          <h3>¿Quien Soy?</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/imagenes/yo.jpg" alt="yo" ALIGN="left">
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item> Mi nombre es Agustin Cantero, soy un estudiante de la tecnicatura en programacion de la Utn
+            Facultad Regional de Avellaneda. </mat-list-item>
+          <mat-list-item> Soy oriundo de Bahia Blanca Provincia de Buenos Aires, naci el 21 de febrero de 1986.
+          </mat-list-item>
+          <mat-list-item> Me considero una persona responsable, respetuosa, con ganas de aprender, crecer y
+            desarrollarme.
+          </mat-list-item>
+          <mat-list-item> Mis objetivos a corto plazo son recibirme para poder seguir creciendo profesionalmente y
+            alcanzar mis metas.</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
   </div>
 
-  <!-- Second Container -->
-  <div id="que" class="container-fluid text-center">
-    <h3 class="margin">Esto es un trabajo práctico</h3>
-    <p>Cada universidad, cada facultad, cada carrera y obviamente cada materia en particular tiene estrategias
-      didácticas y formas de evaluación diferentes. A pesar de que en muchos casos las universidades intentan
-      estandarizar la forma de dictar clase para generar un orden en las planificaciones cuatrimestre a cuatrimestre,
-      las formas de evaluación son elementales tanto para las instituciones y profesores como para los alumnos. A través
-      de la evaluación formativa el educador busca información en el alumno para lograr comprender cómo se está
-      produciendo el proceso de aprendizaje y poder reajustar los objetivos pedagógicos. Y para el alumno es una muestra
-      del progreso que está logrando y si puede aplicar, materializar y darle visibilidad a la comprensión del tema.
-      Según Black y William (1998), la evaluación formativa, ayuda a que los estudiantes sean independientes a la hora
-      del aprendizaje, es decir, se presenta como receptor, autorregulador y centro de esa misma evaluación. </p>
-    <a href="#" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-file"></span> Descargar PDF
-    </a>
+  <div #que>
+    <mat-card id="que">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>¿Que es esto?</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/imagenes/utn.png" alt="yo" ALIGN="left">
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <p>Esta Sala de Juegos es un trabajo practico necesario para aprobar la cursada correspondiente
+              a la cursada de Laboratorio 4. </p>
+          </mat-list-item>
+          <mat-list-item>
+            Cada universidad, cada facultad, cada carrera y obviamente cada materia en particular tiene estrategias
+            didácticas y formas de evaluación diferentes.
+          </mat-list-item>
+          <mat-list-item>
+            A pesar de que en muchos casos las universidades intentan estandarizar la forma de dictar clase para generar
+            un orden en las planificaciones cuatrimestre a cuatrimestre, las formas de evaluación son elementales
+            tanto para las instituciones y profesores como para los alumnos.
+          </mat-list-item>
+          <mat-list-item>
+            A través de la evaluación formativa el educador busca información en el alumno para lograr comprender cómo
+            se
+            está produciendo el proceso de aprendizaje y poder reajustar los objetivos pedagógicos.
+          </mat-list-item>
+          <mat-list-item>
+            Y para el alumno es una muestra del progreso que está logrando y si puede aplicar, materializar y
+            darle visibilidad a la comprensión del tema.
+          </mat-list-item>
+          <mat-list-item>
+            Según Black y William (1998), la evaluación formativa, ayuda a que los estudiantes sean independientes a la
+            hora del aprendizaje, es decir, se presenta como receptor, autorregulador y centro de esa misma evaluación.
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-list-item>
+        <a href="../../../assets/docs/tp.pdf" download>
+          <button mat-button>Descargar PDF</button>
+        </a>
+        <a href="../../../assets/docs/tp.pdf" target="blank">
+          <button mat-button>Ver PDF</button>
+        </a>
+      </mat-list-item>
+    </mat-card>
   </div>
 
-  <!-- Third Container (Grid) -->
-  <div id="donde" class="container-fluid text-center">
-    <h3 class="margin">Dónde Funciona?</h3><br>
-    <div class="row">
-      <div class="col-sm-4">
-        <p>Con las tecnologias WEB que permiten desarrollar aplicaciones multiplataforma</p>
-        <img src="./assets/imagenes/quiensoy1.png" class="img-responsive margin imagenDeQuienSoy" alt="Image">
-      </div>
-      <div class="col-sm-4">
-        <p>Principalmente orientada a la experiencia del usuario, garantizando que su funcionamieto sea fluido y pensado
-          en el comportamiento del usuario y en la funcionalidad.</p>
-        <img src="./assets/imagenes/quiensoy2.jpg" class="img-responsive margin imagenDeQuienSoy" alt="Image">
-      </div>
-      <div class="col-sm-4">
-        <p>Para los sistemas operativos lideres en el mercado del consumo masivo</p>
-        <img src="./assets/imagenes/quiensoy3.png" class="img-responsive margin imagenDeQuienSoy" alt="Image">
-      </div>
-    </div>
+  <div #que>
+    <mat-card id="que">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>¿Dónde Funciona?</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/imagenes/tecnologias.jpg" alt="yo" ALIGN="left">
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            Con las tecnologias WEB que permiten desarrollar aplicaciones multiplataforma.
+          </mat-list-item>
+          <mat-list-item>
+            Principalmente orientada a la experiencia del usuario, garantizando que su funcionamieto sea fluido y
+            pensado
+            en el comportamiento del usuario y en la funcionalidad.
+          </mat-list-item>
+          <mat-list-item>
+              Para los sistemas operativos lideres en el mercado del consumo masivo.
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
   </div>
 
   <!-- Footer -->
   <footer class="container-fluid text-center">
-    <p>Modificado por <a href="https://www.octavio.com.ar">www.octavio.com.ar</a></p>
+    <p>Modificado por <a href="http://www.agustincantero.com" target="blank">www.agustincantero.com</a></p>
   </footer>
 </div>
