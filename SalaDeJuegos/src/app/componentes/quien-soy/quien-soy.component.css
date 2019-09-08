@@ -6,6 +6,7 @@ body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
+    
 }
 p {font-size: 16px;}
 .margin {margin-bottom: 45px;}
@@ -40,4 +41,28 @@ p {font-size: 16px;}
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
+}
+
+.container{
+    background-color: azure;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.mat-card-image{
+    max-width: 500px;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mat-card{
+    margin: 20px 100px;
+    height: 500px;
+}
+
+.left{
+    float: left;
 }

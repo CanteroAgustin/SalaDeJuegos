@@ -8,16 +8,17 @@
     background-color: #464646;
 }
 
-.example-card {
-    width: 300px;
-    height: 400px;
-    margin-top: 200px
-  }
-
-.cardImg{
-    width: 100%
+.mat-grid-header{
+    background-color: chocolate;
 }
 
-.grilla{
-    margin-left: 20%;
+.cardImg{
+    height: 225px;
+    width: 450px
+}
+
+mat-grid-list{
+    padding-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
 }

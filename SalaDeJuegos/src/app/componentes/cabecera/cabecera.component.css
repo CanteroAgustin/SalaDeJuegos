@@ -1,24 +1,21 @@
 .responsive {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
-       Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .fill-some-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
-     Every toolbar row uses a flexbox row layout. */
   flex: 0.05 0.5 auto;
 }
 
 p {
     font: oblique bold 100% cursive;
-  }
+    color: indigo;
+}
 
-  .color{
-    background-color: chocolate
-  }
+.color{
+  background-color: chocolate
+}
