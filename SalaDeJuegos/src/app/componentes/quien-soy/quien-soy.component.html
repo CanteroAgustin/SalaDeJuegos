@@ -3,8 +3,7 @@
   <mat-toolbar>
     <mat-button-toggle (click)="scroll(quien)" class="fill-remaining-space">¿Quien soy?</mat-button-toggle>
     <mat-button-toggle (click)="scroll(que)" class="fill-remaining-space">¿Ques es?</mat-button-toggle>
-    <mat-button-toggle (click)="url('./QuienSoy#donde')" class="fill-remaining-space">¿Dónde Funciona?
-    </mat-button-toggle>
+    <mat-button-toggle (click)="scroll(donde)" class="fill-remaining-space">¿Dónde Funciona?</mat-button-toggle>
   </mat-toolbar>
 
   <div #quien>
@@ -33,7 +32,7 @@
   </div>
 
   <div #que>
-    <mat-card id="que">
+    <mat-card>
       <mat-card-header>
         <mat-card-title>
           <h3>¿Que es esto?</h3>
@@ -81,8 +80,8 @@
     </mat-card>
   </div>
 
-  <div #que>
-    <mat-card id="que">
+  <div #donde>
+    <mat-card>
       <mat-card-header>
         <mat-card-title>
           <h3>¿Dónde Funciona?</h3>
@@ -100,7 +99,7 @@
             en el comportamiento del usuario y en la funcionalidad.
           </mat-list-item>
           <mat-list-item>
-              Para los sistemas operativos lideres en el mercado del consumo masivo.
+            Para los sistemas operativos lideres en el mercado del consumo masivo.
           </mat-list-item>
         </mat-list>
       </mat-card-content>
