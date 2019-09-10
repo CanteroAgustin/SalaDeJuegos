@@ -9,11 +9,13 @@
 
 .fill-some-remaining-space {
   flex: 0.05 0.5 auto;
+  margin-left: 40px;
 }
 
 p {
     font: oblique bold 100% cursive;
     color: indigo;
+    margin: 0;
 }
 
 .color{
