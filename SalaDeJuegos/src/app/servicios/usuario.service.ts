@@ -15,4 +15,8 @@ export class UsuarioService {
       console.log(data);
     });
   }
+
+  registrarUsuario(data){
+    this.miHttp.httpPostP(this.url,data);
+  }
 }

@@ -15,6 +15,7 @@ export class RegistroDialogComponent{
   constructor(private router: Router,
     @Inject(MAT_DIALOG_DATA) private data: any,
     private dialogRef: MatDialogRef<RegistroDialogComponent>) {
+    dialogRef.disableClose = true;
     if (data) {
       this.message = data.message || this.message;
       if (data.buttonText) {
