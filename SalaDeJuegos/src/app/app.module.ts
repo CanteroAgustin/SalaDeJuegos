@@ -1,27 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, 
-  MatMenuModule, MatPaginatorModule } from  '@angular/material';
-import {DemoMaterialModule} from './material-module';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,
+  MatMenuModule, MatPaginatorModule, MatDialogModule
+} from '@angular/material';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+import { DemoMaterialModule } from './material-module';
 
 import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
 
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
 
-import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
-import { PaisesService } from './servicios/paises.service'; 
+import { MiHttpService } from './servicios/mi-http/mi-http.service';
+import { PaisesService } from './servicios/paises.service';
 
-import { JugadoresService } from './servicios/jugadores.service'; 
-import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
+import { JugadoresService } from './servicios/jugadores.service';
+import { ArchivosJugadoresService } from './servicios/archivos-jugadores.service';
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
@@ -60,6 +64,7 @@ import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-goog
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
+import { RegistroDialogComponent } from './componentes/registro-dialog/registro-dialog.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +91,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
+    RegistroDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,16 +101,18 @@ import { SexoPipe } from './pipes/sexo.pipe';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     }),
-    MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, 
+    MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule,
     MatIconModule, MatMenuModule,
-    BrowserAnimationsModule, MatPaginatorModule,DemoMaterialModule,
+    BrowserAnimationsModule, MatPaginatorModule, DemoMaterialModule,
+    MatDialogModule,
     FontAwesomeModule,
     ReactiveFormsModule,
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
-  bootstrap: [AppComponent]
+  providers: [JuegoServiceService, MiHttpService, PaisesService, ArchivosJugadoresService, JugadoresService],
+  bootstrap: [AppComponent],
+  entryComponents: [RegistroDialogComponent]
 })
 export class AppModule { }
