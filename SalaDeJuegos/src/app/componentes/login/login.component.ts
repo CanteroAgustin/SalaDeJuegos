@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router, private usuarioService: UsuarioService) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
@@ -32,10 +33,17 @@ export class LoginComponent implements OnInit {
   }
 
   Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
-      this.router.navigate(['/Principal']);
-    }
+    this.usuarioService.getUsuarios().subscribe(data => {
+      for(let i=0; i < Object.keys(data).length; i++){
+        if (this.usuario === data[i].userName && this.clave === data[i].password) {
+          this.usuarioService.setUsuarioLoggeado();
+          this.router.navigate(['/Principal']);
+        }
+      }
+      
+    });
   }
+  
   MoverBarraDeProgreso() {
     
     this.logeando=false;

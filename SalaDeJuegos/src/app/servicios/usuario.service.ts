@@ -9,14 +9,22 @@ export class UsuarioService {
   constructor(private miHttp: MiHttpService) { }
 
   url = "https://quiet-tor-05306.herokuapp.com/users"; 
+  public usuarioLogeado;
 
   getUsuarios(){
-    this.miHttp.httpGetO(this.url).subscribe(data=>{
-      console.log(data);
-    });
+    return this.miHttp.httpGetO(this.url);
   }
 
   registrarUsuario(data){
-    this.miHttp.httpPostP(this.url,data);
+    return this.miHttp.httpPostP(this.url,data);
   }
+
+  getUsuarioLoggeado(){
+    return this.usuarioLogeado;
+  }
+
+  setUsuarioLoggeado(){
+    this.usuarioLogeado = true;
+  }
+
 }

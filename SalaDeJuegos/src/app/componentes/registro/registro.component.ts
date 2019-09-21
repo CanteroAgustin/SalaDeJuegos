@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 import { RegistroDialogComponent } from '../registro-dialog/registro-dialog.component';
 import { FormBuilder } from '@angular/forms';
 import { UsuarioService } from '../../servicios/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -14,8 +15,9 @@ export class RegistroComponent implements OnInit {
   loginForm;
   nombre;
   loggedIn = false;
-
-  constructor(private dialog: MatDialog, private usuarioService: UsuarioService, private formBuilder: FormBuilder) {
+  
+  constructor(private dialog: MatDialog, private usuarioService: UsuarioService, private formBuilder: FormBuilder,
+    private router: Router) {
     this.usuarioService.getUsuarios();
     this.loginForm = this.formBuilder.group({
       nombre: '',
@@ -34,9 +36,11 @@ export class RegistroComponent implements OnInit {
 
   onSubmit(loginData) {
     // Process checkout data here
-    console.info('Datos ingresados en el login: ', loginData);
-    this.usuarioService.registrarUsuario(loginData);
-
+    console.info('Datos ingresados en el login: ', loginData)
+    this.usuarioService.registrarUsuario(loginData).subscribe( datos => {
+      this.usuarioService.setUsuarioLoggeado();
+    });
+      this.router.navigate(['/Principal']);
   }
 
   openDialog() {

@@ -25,11 +25,7 @@ export class MiHttpService {
   public httpPostP( url: string, objeto: any )
   {
     return this.http
-    .get( url )
-    .subscribe( data => {
-      console.log( data );
-      return data;
-    });
+    .post( url, objeto);
   }
 
   public httpGetO ( url: string)

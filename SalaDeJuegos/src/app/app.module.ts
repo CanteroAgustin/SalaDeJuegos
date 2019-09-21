@@ -65,6 +65,7 @@ import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 import { RegistroDialogComponent } from './componentes/registro-dialog/registro-dialog.component';
+import { TableroComponent } from './componentes/tablero/tablero.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { RegistroDialogComponent } from './componentes/registro-dialog/registro-
     InputJugadoresComponent,
     SexoPipe,
     RegistroDialogComponent,
+    TableroComponent,
   ],
   imports: [
     BrowserModule,
