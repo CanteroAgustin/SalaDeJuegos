@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-cabecera',
@@ -9,10 +9,18 @@ export class CabeceraComponent implements OnInit {
 
   @Input() loggedIn;
 
+  @Output()
+  logOut = new EventEmitter<boolean>();
+
   constructor() { 
   }
 
   ngOnInit() {
   }
+
+  cerrar(){
+    this.logOut.emit(true);
+  }
+
 
 }

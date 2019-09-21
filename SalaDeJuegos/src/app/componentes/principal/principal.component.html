@@ -1,4 +1,4 @@
-<app-cabecera [loggedIn] = "loggedIn"> </app-cabecera>
+<app-cabecera [loggedIn] = "loggedIn" (logOut)="procesarCerrar($event)"> </app-cabecera>
 <div class="container">
   <app-tablero *ngIf=(loggedIn) [loggedIn] = "loggedIn"> </app-tablero>
 </div>

@@ -9,6 +9,7 @@ export class UsuarioService {
   constructor(private miHttp: MiHttpService) { }
 
   url = "https://quiet-tor-05306.herokuapp.com/users"; 
+  urlLocal = "http://localhost:3000/users";
   public usuarioLogeado;
 
   getUsuarios(){
@@ -25,6 +26,11 @@ export class UsuarioService {
 
   setUsuarioLoggeado(){
     this.usuarioLogeado = true;
+  }
+
+  cargarFoto(foto){
+    console.log("llamando:"+this.urlLocal+"/upload");
+    return this.miHttp.httpPostP(this.url+"/upload",foto);
   }
 
 }

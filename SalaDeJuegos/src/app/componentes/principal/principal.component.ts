@@ -21,6 +21,9 @@ export class PrincipalComponent implements OnInit {
     }
   }
 
+  procesarCerrar(){
+    this.loggedIn = false;
+  }
 
 
 }

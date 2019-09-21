@@ -15,7 +15,9 @@ export class RegistroComponent implements OnInit {
   loginForm;
   nombre;
   loggedIn = false;
-  
+  fileToUpload: File = null;
+  fd = new FormData();
+
   constructor(private dialog: MatDialog, private usuarioService: UsuarioService, private formBuilder: FormBuilder,
     private router: Router) {
     this.usuarioService.getUsuarios();
@@ -37,10 +39,14 @@ export class RegistroComponent implements OnInit {
   onSubmit(loginData) {
     // Process checkout data here
     console.info('Datos ingresados en el login: ', loginData)
-    this.usuarioService.registrarUsuario(loginData).subscribe( datos => {
+    this.fd.append('image', this.fileToUpload, this.fileToUpload.name);
+    this.usuarioService.cargarFoto(this.fd).subscribe(data=>{
+      console.log(data);
+    });
+    this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
       this.usuarioService.setUsuarioLoggeado();
     });
-      this.router.navigate(['/Principal']);
+    this.router.navigate(['/Principal']);
   }
 
   openDialog() {
@@ -54,5 +60,9 @@ export class RegistroComponent implements OnInit {
     };
 
     this.dialog.open(RegistroDialogComponent, dialogConfig);
+  }
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
   }
 }
