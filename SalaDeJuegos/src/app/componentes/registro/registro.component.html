@@ -1,50 +1,55 @@
 <app-cabecera [loggedIn]="loggedin"></app-cabecera>
+<div class="container">
+  <div class="contain">
+    <h1>Registro de usuario</h1>
+    <div class="containerImg">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
 
-<h1>Registro de usuario</h1>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <div>
+          <mat-form-field>
+            <input matInput id="nombre" type="text" placeholder="Nombre" formControlName="nombre" required
+              class="form-control">
+          </mat-form-field>
+        </div>
 
-  <div>
-    <mat-form-field>
-      <input matInput id="nombre" type="text" placeholder="Nombre" formControlName="nombre" required
-        class="form-control">
-    </mat-form-field>
+        <div>
+          <mat-form-field>
+            <input matInput id="apellido" type="text" placeholder="Apellido" formControlName="apellido" required
+              class="form-control">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input matInput id="userName" type="text" placeholder="Nombre de usuario" formControlName="userName"
+              required class="form-control">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input dividerColor="primary" matInput id="password" type="text" placeholder="Contraseña"
+              formControlName="password" required class="form-control">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input matInput id="documento" type="text" placeholder="Documento" formControlName="documento" required
+              class="form-control">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <label for="file">Choose File</label>
+          <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+        </div>
+
+
+        <div class="padding-top-20">
+          <button mat-button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <div>
-    <mat-form-field>
-      <input matInput id="apellido" type="text" placeholder="Apellido" formControlName="apellido" required
-        class="form-control">
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field>
-      <input matInput id="userName" type="text" placeholder="Nombre de usuario" formControlName="userName" required
-        class="form-control">
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field>
-      <input matInput id="password" type="text" placeholder="Contraseña" formControlName="password" required
-        class="form-control">
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field>
-      <input matInput id="documento" type="text" placeholder="Documento" formControlName="documento" required
-        class="form-control">
-    </mat-form-field>
-  </div>
-
-  <div>
-    <label for="file">Choose File</label>
-    <input type="file" id="file" (change)="handleFileInput($event.target.files)">
-  </div>
-  
-
-  <div class="padding-top-20">
-    <button mat-button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">Enviar</button>
-  </div>
-</form>
+</div>

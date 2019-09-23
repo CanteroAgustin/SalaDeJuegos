@@ -8,14 +8,17 @@ import { Component, OnInit, Input,EventEmitter, Output  } from '@angular/core';
 export class CabeceraComponent implements OnInit {
 
   @Input() loggedIn;
+  @Input() userName;
 
   @Output()
   logOut = new EventEmitter<boolean>();
+  usuarioLogeado;
 
   constructor() { 
   }
 
   ngOnInit() {
+    
   }
 
   cerrar(){

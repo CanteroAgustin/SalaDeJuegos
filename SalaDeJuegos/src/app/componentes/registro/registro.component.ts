@@ -44,9 +44,10 @@ export class RegistroComponent implements OnInit {
       console.log(data);
     });
     this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
-      this.usuarioService.setUsuarioLoggeado();
-    });
-    this.router.navigate(['/Principal']);
+      this.usuarioService.loggear(loginData.userName, loginData.password).then(data =>{
+        this.router.navigate(['/Principal']);
+      });
+    });   
   }
 
   openDialog() {

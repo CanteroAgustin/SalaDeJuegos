@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MiHttpService } from '../servicios/mi-http/mi-http.service'
+import { Usuario } from '../clases/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -10,27 +11,50 @@ export class UsuarioService {
 
   url = "https://quiet-tor-05306.herokuapp.com/users"; 
   urlLocal = "http://localhost:3000/users";
-  public usuarioLogeado;
-
+  //public usuarioLogeado;
+  public usuarioLogeado = null;
+  
   getUsuarios(){
-    return this.miHttp.httpGetO(this.url);
+    return this.miHttp.httpGetO(this.urlLocal);
   }
 
   registrarUsuario(data){
-    return this.miHttp.httpPostP(this.url,data);
+    return this.miHttp.httpPostP(this.urlLocal,data);
   }
 
-  getUsuarioLoggeado(){
+  getUsuarioLogeado(){
     return this.usuarioLogeado;
   }
 
-  setUsuarioLoggeado(){
-    this.usuarioLogeado = true;
+  setUsuarioLogeado(usuario){
+    this.usuarioLogeado = usuario;
+    console.log(this.usuarioLogeado);
+  }
+
+  loggear(userName, password){
+    let promise = new Promise((resolve, reject)=>{
+      this.getUsuarios().subscribe(data => {
+        let ok = false;
+        for(let i=0; i < Object.keys(data).length; i++){
+          if (userName === data[i].userName && password === data[i].password) {
+            this.setUsuarioLogeado(data[i]);
+            resolve(this.getUsuarioLogeado()),
+            ok = true;
+          }
+        }
+        if(!ok){
+          reject(new Error("No se pudo loggear"));
+        }
+      });
+    });
+    return promise;
   }
 
   cargarFoto(foto){
-    console.log("llamando:"+this.urlLocal+"/upload");
     return this.miHttp.httpPostP(this.url+"/upload",foto);
   }
 
+  deslogear(){
+    this.usuarioLogeado = null;
+  }
 }

@@ -1,4 +1,4 @@
-<app-cabecera> </app-cabecera>
+<app-cabecera [loggedIn] = "loggedIn" [userName] = "userName" (logOut)="procesarCerrar($event)"> </app-cabecera>
 <div class="container">
   <mat-toolbar>
     <mat-button-toggle (click)="scroll(quien)" class="fill-remaining-space">¿Quien soy?</mat-button-toggle>

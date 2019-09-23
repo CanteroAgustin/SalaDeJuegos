@@ -1,8 +1,8 @@
 
 form {
-    border: 10px solid #f1f1f1;
+    border: 3px solid #f1f1f1;
     padding: 10px;
-    background:gray;
+    
 }
 
 input[type=text], input[type=password] {
@@ -43,15 +43,19 @@ button:hover {
     margin: 24px 0 12px 0;
 }
 
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
+.container{
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
 }
 
-.container {
-    max-width: 500px;
+.contain{
     height: auto;
     margin: 0 auto;
+    max-width: 500px;
 }
 
 span.psw {

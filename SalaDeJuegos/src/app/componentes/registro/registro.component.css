@@ -1,12 +1,41 @@
-/**@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');x*/
+/*@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');*/
 
-
-form{
-    padding-left: 50px;
-    
-    
+form {
+    padding: 10px;
+    margin: 5px;
 }
 
 .padding-top-20{
     padding-top: 20px;
 }
+
+h1 {
+    margin-top: 0;
+    padding-top: 10px;
+    color: chocolate;
+    text-align: center;
+}
+
+.container{
+    min-height: 400px;
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.contain{
+    height: auto;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.containerImg{
+    background-image: url(../../../assets/imagenes/nota6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+}
+

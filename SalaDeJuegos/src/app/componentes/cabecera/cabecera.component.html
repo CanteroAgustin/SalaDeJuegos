@@ -41,8 +41,11 @@
     </span>
   </span>
 
-  <span class="fill-some-remaining-space"><a routerLink="/Registro"><span
+  <span *ngIf="!loggedIn" class="fill-some-remaining-space"><a routerLink="/Registro"><span
         class="glyphicon glyphicon-user"></span>Registrarse</a></span>
-  <span class="fill-some-remaining-space"><a routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span>
+  <span *ngIf="!loggedIn" class="fill-some-remaining-space"><a routerLink="/Login"><span
+        class="glyphicon glyphicon-log-in"></span>
       Ingresar</a></span>
+  <span *ngIf="loggedIn" class="fill-some-remaining-space">
+    Bienvenido {{userName}}</span>
 </mat-toolbar>
