@@ -15,11 +15,11 @@ export class UsuarioService {
   public usuarioLogeado = null;
   
   getUsuarios(){
-    return this.miHttp.httpGetO(this.urlLocal);
+    return this.miHttp.httpGetO(this.url);
   }
 
   registrarUsuario(data){
-    return this.miHttp.httpPostP(this.urlLocal,data);
+    return this.miHttp.httpPostP(this.url,data);
   }
 
   getUsuarioLogeado(){
