@@ -2,52 +2,33 @@
 <div class="container">
   <div class="contain">
     <h1>Registro de usuario</h1>
-    <div class="containerImg">
+    <div>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
 
-        <div>
-          <mat-form-field>
-            <input matInput id="nombre" type="text" placeholder="Nombre" formControlName="nombre" required
-              class="form-control">
-          </mat-form-field>
-        </div>
+        <label><b>Nombre</b></label>
+        <input type="text" id="nombre" placeholder="Nombre" formControlName="nombre" required>
+
+        <label><b>Apellido</b></label>
+        <input id="apellido" type="text" placeholder="Apellido" formControlName="apellido" name="apellido" required>
+
+        <label><b>Nombre de usuario</b></label>
+        <input id="userName" type="text" placeholder="Nombre de usuario" formControlName="userName" name="userName" required>
+
+        <label><b>Contraseña</b></label>
+        <input id="password" type="password" placeholder="Clave" formControlName="password" name="password" required>
+
+        <label><b>Documento</b></label>
+        <input id="documento" type="text" placeholder="Documento" formControlName="documento" name="documento" required>
 
         <div>
-          <mat-form-field>
-            <input matInput id="apellido" type="text" placeholder="Apellido" formControlName="apellido" required
-              class="form-control">
-          </mat-form-field>
-        </div>
-
-        <div>
-          <mat-form-field>
-            <input matInput id="userName" type="text" placeholder="Nombre de usuario" formControlName="userName"
-              required class="form-control">
-          </mat-form-field>
-        </div>
-
-        <div>
-          <mat-form-field>
-            <input dividerColor="primary" matInput id="password" type="text" placeholder="Contraseña"
-              formControlName="password" required class="form-control">
-          </mat-form-field>
-        </div>
-
-        <div>
-          <mat-form-field>
-            <input matInput id="documento" type="text" placeholder="Documento" formControlName="documento" required
-              class="form-control">
-          </mat-form-field>
-        </div>
-
-        <div>
-          <label for="file">Choose File</label>
+          <label for="file"><b>Seleccione su imagen</b></label>
           <input type="file" id="file" (change)="handleFileInput($event.target.files)">
         </div>
 
-
         <div class="padding-top-20">
-          <button mat-button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">Enviar</button>
+          <button mat-button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">Enviar
+              <mat-icon>arrow_right_alt</mat-icon>
+          </button>
         </div>
       </form>
     </div>
