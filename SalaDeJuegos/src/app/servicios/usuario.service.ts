@@ -10,7 +10,7 @@ export class UsuarioService {
   constructor(private miHttp: MiHttpService) { }
 
   url = "https://quiet-tor-05306.herokuapp.com/users"; 
-  urlLocal = "http://localhost:3000/users";
+  //url = "http://localhost:3000/users";
   //public usuarioLogeado;
   public usuarioLogeado = null;
   
