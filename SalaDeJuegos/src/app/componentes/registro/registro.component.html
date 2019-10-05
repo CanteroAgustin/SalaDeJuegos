@@ -17,13 +17,13 @@
         <label><b>Contraseña</b></label>
         <input id="password" type="password" placeholder="Clave" formControlName="password" name="password" required>
 
-        <label><b>Documento</b></label>
-        <input id="documento" type="text" placeholder="Documento" formControlName="documento" name="documento" required>
+        <label><b>Email</b></label>
+        <input id="email" type="text" placeholder="Email" formControlName="email" name="email" required>
 
-        <div>
+        <!--div>
           <label for="file"><b>Seleccione su imagen</b></label>
-          <input type="file" id="file" (change)="handleFileInput($event.target.files)">
-        </div>
+          <input type="file" id="file" formControlName="foto" (change)="handleFileInput($event.target.files)">
+        </div-->
 
         <div class="padding-top-20">
           <button mat-button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">Enviar

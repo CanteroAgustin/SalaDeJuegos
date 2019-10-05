@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { MiHttpService } from '../servicios/mi-http/mi-http.service'
-import { Usuario } from '../clases/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  
   constructor(private miHttp: MiHttpService) { }
 
-  url = "https://quiet-tor-05306.herokuapp.com/users"; 
-  //url = "http://localhost:3000/users";
-  //public usuarioLogeado;
+  //url = "https://quiet-tor-05306.herokuapp.com/users"; 
+  url = "http://localhost/TP_FINAL_PROG3_CANTERO/usuario";
+  
   public usuarioLogeado = null;
   
   getUsuarios(){

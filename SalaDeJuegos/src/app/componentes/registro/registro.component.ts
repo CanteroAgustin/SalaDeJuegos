@@ -26,8 +26,7 @@ export class RegistroComponent implements OnInit {
       apellido: '',
       userName: '',
       password: '',
-      rol: '',
-      documento: '',
+      email: '',
       foto: '',
     });
   }
@@ -37,17 +36,12 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit(loginData) {
-    // Process checkout data here
-    console.info('Datos ingresados en el login: ', loginData)
-    this.fd.append('image', this.fileToUpload, this.fileToUpload.name);
-    this.usuarioService.cargarFoto(this.fd).subscribe(data=>{
-      console.log("Se guardo la imagen en: "+data);
-      //loginData.foto = data['path'];
-      this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
-        this.usuarioService.loggear(loginData.userName, loginData.password).then(data =>{
-          this.router.navigate(['/Principal']);
-        });
-      });   
+    console.info('Datos ingresados en el registro: ', JSON.stringify(loginData));
+    
+    this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
+      this.usuarioService.loggear(loginData.userName, loginData.password).then(data =>{
+        this.router.navigate(['/Principal']);
+      });
     });
   }
 

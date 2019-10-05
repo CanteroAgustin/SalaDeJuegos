@@ -11,36 +11,30 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class MiHttpService {
 
-  constructor( public http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  public httpGetP ( url: string)
-  {
+  public httpGetP(url: string) {
     return this.http
-    .get( url )
-    .toPromise()
-    .then( this.extractData )
-    .catch( this.handleError );
+      .get(url)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
   }
 
-  public httpPostP( url: string, objeto: any )
-  {
-    return this.http
-    .post( url, objeto);
+  public httpPostP(url: string, objeto: any) {
+    return this.http.post(url, objeto);
   }
 
-  public httpGetO ( url: string)
-  {
-    return this.http.get( url );
+  public httpGetO(url: string) {
+    return this.http.get(url);
   }
 
 
-  private extractData ( res: Response )
-  {
+  private extractData(res: Response) {
     return res.json() || {};
   }
 
-  private handleError ( error: Response | any )
-  {
+  private handleError(error: Response | any) {
     return error;
   }
 }
