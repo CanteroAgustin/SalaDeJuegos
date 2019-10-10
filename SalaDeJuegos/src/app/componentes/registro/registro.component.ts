@@ -40,6 +40,7 @@ export class RegistroComponent implements OnInit {
     
     this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
       this.usuarioService.loggear(loginData.userName, loginData.password).then(data =>{
+        localStorage.setItem('loggedIn', 'true');
         this.router.navigate(['/Principal']);
       });
     });

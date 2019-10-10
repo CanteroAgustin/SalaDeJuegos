@@ -1,10 +1,10 @@
-<ul class="nav nav-pills nav-justified">
+<!--ul class="nav nav-pills nav-justified">
   <li class="active"><a routerLink="/Principal">Ir a inicio</a></li>
   <li><a (click)="TraerTodos()">Todos los jugadores</a></li>
   <li><a (click)="TraerGanadores()">Los ganadores</a></li>
   <li><a (click)="TraerPerdedores()">Los perdedores</a></li>
-</ul>
-
+</ul-->
+<app-cabecera [loggedIn] = "loggedIn" [userName] = "userName" (logOut)="procesarCerrar($event)"> </app-cabecera>
 
 
 <table class="table table-condensed">
@@ -13,17 +13,15 @@
       <th>Nombre de usuario</th>
       <th>Nombre</th>
       <th>Apellido</th>
-      <th>Puntaje</th>
-      <th>Foto</th>
+      <th>Email</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let jugador of listado" >
-      <td>{{listado.userName}} </td>
+      <td>{{jugador.userName}} </td>
       <td>{{jugador.nombre}} </td> 
       <td>{{jugador.apellido}} </td> 
-      <td> </td> 
-      <td><img src="{{jugador.foto}}" alt="avatar" height="42" width="42"> </td> 
+      <td>{{jugador.email}} </td>
     </tr>
   </tbody>
 </table>

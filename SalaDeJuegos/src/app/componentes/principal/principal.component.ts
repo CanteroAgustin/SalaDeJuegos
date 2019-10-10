@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { Usuario } from 'src/app/clases/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-principal',
@@ -17,19 +18,20 @@ export class PrincipalComponent implements OnInit {
     isFirstDisabled: false
   };
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit() {
     let logeado = this.usuarioService.getUsuarioLogeado();
     if (logeado) {
       this.loggedIn = true;
-      this.userName = logeado.userName;
+      this.userName = logeado;
     }
   }
 
   procesarCerrar(){
     this.loggedIn = false;
     this.usuarioService.deslogear();
+    this.router.navigate(['/Principal']);
   }
 
 

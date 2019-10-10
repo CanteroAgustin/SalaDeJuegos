@@ -18,7 +18,7 @@ export class QuienSoyComponent implements OnInit {
     let logeado = this.usuarioService.getUsuarioLogeado();
     if (logeado) {
       this.loggedIn = true;
-      this.userName = logeado.userName;
+      this.userName = logeado;
     }
   }
 

@@ -22,7 +22,7 @@ export class MiHttpService {
   }
 
   public httpPostP(url: string, objeto: any) {
-    return this.http.post(url, objeto);
+    return this.http.post(url, objeto, {responseType: 'text'});
   }
 
   public httpGetO(url: string) {

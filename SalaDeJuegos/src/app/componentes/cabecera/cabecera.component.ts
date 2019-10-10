@@ -18,7 +18,7 @@ export class CabeceraComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.loggedIn = localStorage.getItem('loggedIn') == 'true' ? true : false;
   }
 
   cerrar(){

@@ -13,7 +13,7 @@ export class JugadoresListadoComponent implements OnInit {
 
   }
 
-
+  loggedIn = false;
 
   ngOnInit() {
     this.TraerTodos();
@@ -44,4 +44,8 @@ export class JugadoresListadoComponent implements OnInit {
     //})
   }
 
+  procesarCerrar(){
+    this.loggedIn = false;
+    this.usuarioService.deslogear();
+  }
 }

@@ -11,8 +11,6 @@ export class UsuarioService {
   //url = "https://quiet-tor-05306.herokuapp.com/users"; 
   url = "http://localhost/TP_FINAL_PROG3_CANTERO/usuario";
   
-  public usuarioLogeado = null;
-  
   getUsuarios(){
     return this.miHttp.httpGetO(this.url);
   }
@@ -22,12 +20,7 @@ export class UsuarioService {
   }
 
   getUsuarioLogeado(){
-    return this.usuarioLogeado;
-  }
-
-  setUsuarioLogeado(usuario){
-    this.usuarioLogeado = usuario;
-    console.log(this.usuarioLogeado);
+    return localStorage.getItem('usuarioLogeado');
   }
 
   loggear(userName, password){
@@ -36,8 +29,9 @@ export class UsuarioService {
         let ok = false;
         for(let i=0; i < Object.keys(data).length; i++){
           if (userName === data[i].userName && password === data[i].password) {
-            this.setUsuarioLogeado(data[i]);
-            resolve(this.getUsuarioLogeado()),
+            localStorage.setItem('usuarioLogeado',data[i].nombre);
+            let usuarioLogeado = this.getUsuarioLogeado();
+            resolve(usuarioLogeado);
             ok = true;
           }
         }
@@ -54,6 +48,6 @@ export class UsuarioService {
   }
 
   deslogear(){
-    this.usuarioLogeado = null;
+    localStorage.setItem('loggedIn', 'false');
   }
 }

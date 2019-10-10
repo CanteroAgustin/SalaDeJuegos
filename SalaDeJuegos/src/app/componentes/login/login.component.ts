@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
 
   Entrar(data) {
     this.usuarioService.loggear(data.usuario, data.clave).then(data => {
+      localStorage.setItem('loggedIn', 'true');
       this.router.navigate(['/Principal']);
     }).catch(error => {
       console.log(error);
