@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-jugadores-listado',
   templateUrl: './jugadores-listado.component.html',
@@ -9,13 +10,18 @@ export class JugadoresListadoComponent implements OnInit {
 
   listado: any
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
 
   }
 
   loggedIn = false;
-
+  userName = "";
   ngOnInit() {
+    let logeado = this.usuarioService.getUsuarioLogeado();
+    if (logeado) {
+      this.loggedIn = true;
+      this.userName = logeado;
+    }
     this.TraerTodos();
   }
 
@@ -47,5 +53,6 @@ export class JugadoresListadoComponent implements OnInit {
   procesarCerrar(){
     this.loggedIn = false;
     this.usuarioService.deslogear();
+    this.router.navigate(['/Principal']);
   }
 }

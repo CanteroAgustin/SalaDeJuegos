@@ -49,5 +49,6 @@ export class UsuarioService {
 
   deslogear(){
     localStorage.setItem('loggedIn', 'false');
+    localStorage.removeItem('usuarioLogeado');
   }
 }

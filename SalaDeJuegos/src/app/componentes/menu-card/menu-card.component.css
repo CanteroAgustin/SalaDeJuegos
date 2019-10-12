@@ -19,8 +19,18 @@ img {
 }/* Add some padding inside the card container */
 .container {
     padding: 2px 16px;
+    min-height: 800px;
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
 }
 
+.titulo{
+  height: 80px;
+}
 
 .button{
     margin-left: 1px;
@@ -55,3 +65,47 @@ img {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+
+  .mat-card{
+    width: 700px;
+    margin: 30px 600px;
+    height: 210px;
+    background-color: cornsilk;
+    padding: 0;
+    text-align: center;
+  }
+
+  .mat-card-title{
+    margin: 0 auto;
+  }
+  
+  .mat-card-image{
+    width: 200px;
+    height: 210px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mat-card-image:first-child{
+    margin: 0;
+  }
+
+  mat-card-header {
+    padding: 10px 50px;
+  }
+
+  .mat-card-content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em
+  }
+
+  .mat-card.clickable:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+H3 { margin-left: auto;
+  margin-right: auto;
+  width: 15em }

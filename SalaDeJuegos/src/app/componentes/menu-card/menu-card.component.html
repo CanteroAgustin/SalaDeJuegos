@@ -1,40 +1,48 @@
-<div class="container" >
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
-  
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-    
-    </div>
-  
-    <div class="card">
-      <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('PPT')">Jugar</button></p>
-    </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
-    </div>
+<div class="container">
+
+  <div>
+    <mat-card class="clickable" (click)="Juego('Agilidad')">
+      <img mat-card-image src="../../../assets/imagenes/mental3.jpg" alt="Juego Mental" ALIGN="left">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>Velocidad y agilidad aritmética </h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>El objetivo de los juegos mentales es mejorar la capacidad de percepción, la intuición y el ingenio</p>
+        <p>UTN FRA </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card class="clickable" (click)="Juego('PPT')">
+      <img mat-card-image src="../../../assets/imagenes/ppt.png" alt="Juego Mental" ALIGN="left">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>Piedra Papel o Tijera</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>La piedra aplasta la tijera. ...
+          La tijera corta el papel. ...
+          El papel envuelve la piedra</p>
+        <p>UTN FRA </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card class="clickable" (click)="Juego('Adivina')">
+      <img mat-card-image src="../../../assets/imagenes/adivina.jpg" alt="Juego Mental" ALIGN="left">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>Adivina el número secreto</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Adivinaste, el juego consiste en adivinar el numero.</p>
+        <p>UTN FRA </p>
+      </mat-card-content>
+    </mat-card>
   </div>
