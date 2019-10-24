@@ -66,6 +66,7 @@ import { InputJugadoresComponent } from './componentes/input-jugadores/input-jug
 import { SexoPipe } from './pipes/sexo.pipe';
 import { RegistroDialogComponent } from './componentes/registro-dialog/registro-dialog.component';
 import { TableroComponent } from './componentes/tablero/tablero.component';
+import { AuthGuard } from './AuthGuard';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,7 @@ import { TableroComponent } from './componentes/tablero/tablero.component';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [JuegoServiceService, MiHttpService, PaisesService, ArchivosJugadoresService, JugadoresService],
+  providers: [JuegoServiceService, MiHttpService, PaisesService, ArchivosJugadoresService, JugadoresService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [RegistroDialogComponent]
 })

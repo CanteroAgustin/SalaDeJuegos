@@ -6,6 +6,8 @@ import { TimerObservable } from "rxjs/observable/TimerObservable";
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { FormBuilder } from '@angular/forms';
 
+import { AuthServiceService } from '../../servicios/auth-service.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,12 +26,12 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router, private usuarioService: UsuarioService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder, private authServiceService: AuthServiceService) {
     this.progreso = 0;
     this.ProgresoDeAncho = "0%";
     this.loginForm = this.formBuilder.group({
-      usuario: '',
-      clave: ''
+      userName: '',
+      password: ''
     });
   }
 
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
 
   Entrar(data) {
     this.usuarioService.loggear(data.usuario, data.clave).then(data => {
+      this.authServiceService.setToken(JSON.stringify(data));
       localStorage.setItem('loggedIn', 'true');
       this.router.navigate(['/Principal']);
     }).catch(error => {
@@ -45,6 +48,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  login(datos) {
+    this.usuarioService.loginEnBackend(datos).subscribe(token => {
+      this.authServiceService.setToken(token);
+      
+      if(this.authServiceService.isValidToken()){
+        localStorage.setItem('loggedIn', 'true');
+        localStorage.setItem('usuarioLogeado', datos.userName);
+        this.router.navigate(['/Principal']);
+      }     
+    });
+  }
 
   MoverBarraDeProgreso(data) {
 
@@ -54,11 +68,11 @@ export class LoginComponent implements OnInit {
     let timer = TimerObservable.create(200, 50);
     this.subscription = timer.subscribe(t => {
       console.log("inicio");
-      this.progreso = this.progreso + 1;
+      this.progreso = this.progreso + 2;
       this.ProgresoDeAncho = this.progreso + 20 + "%";
       if (this.progreso == 100) {
         this.subscription.unsubscribe();
-        this.Entrar(data);
+        this.login(data);
       }
     });
     //this.logeando=true;

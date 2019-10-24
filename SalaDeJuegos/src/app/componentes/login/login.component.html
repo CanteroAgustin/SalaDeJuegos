@@ -6,10 +6,10 @@
       <form [formGroup]="loginForm" action="return true;">
 
         <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario" formControlName="usuario" name="uname" required>
+        <input type="text" placeholder="Usuario" formControlName="userName" name="uname" required>
 
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Clave" formControlName="clave" name="psw" required>
+        <input type="password" placeholder="Clave" formControlName="password" name="psw" required>
 
         <button [disabled]="!loginForm.valid" mat-button *ngIf="logeando"
           (click)="MoverBarraDeProgreso(loginForm.value)">Ingresar</button>
