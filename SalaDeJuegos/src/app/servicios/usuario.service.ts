@@ -10,7 +10,7 @@ export class UsuarioService {
 
   //url = "https://quiet-tor-05306.herokuapp.com/users"; 
   //url = "http://localhost/TP_FINAL_PROG3_CANTERO/usuario";
-  url = "http://localhost/ApiComanda";
+  url = "http://agustincantero.com/UtnFRA/Laboratorio4/ApiComanda";
 
   getUsuarios() {
     return this.miHttp.httpGetO(this.url);

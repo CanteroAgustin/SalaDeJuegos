@@ -1,0 +1,115 @@
+.container{
+    min-height: 408px;
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.trivia{
+    background-image: url(../../../assets/imagenes/triviaResize1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 150px;
+}
+
+textarea{
+    background-color: cornsilk;
+}
+
+textarea.mat-input-element{
+    padding-top: 15px;
+    resize: none;
+    height: 80px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.wraper{
+    border: chocolate 2px solid;
+    border-radius: 10px;
+    //position: absolute;
+    margin: auto;
+    top: 40%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 210px;
+    height: 310px;
+    padding-left: 15px;
+    background-color: #464646;
+}
+
+.center{
+    margin: 0 auto;
+    width: 200px;
+    height: 300px; 
+}
+
+input.mat-input-element{
+    border-radius: 5px;
+    background-color: darkkhaki;
+    height: 30px;
+    margin: 10px 0;
+    width: 90%;
+    text-align: center;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input.mat-input-element:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.correcta{
+    border: greenyellow 2px solid;
+}
+
+.incorrecta{
+    border: red 2px solid;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.height20{
+    min-height: 20px;
+}
+
+
+::ng-deep .mat-icon.play{
+    height:100px !important;
+    width:100px !important;
+    font-size:100px !important;
+    color:mediumblue
+}
+
+.divButton{
+    width: 8%;
+    margin: 0 auto;
+}
+
+.divButtonNext{
+    top: 90%;
+    position: absolute;
+    left: 58%;
+}

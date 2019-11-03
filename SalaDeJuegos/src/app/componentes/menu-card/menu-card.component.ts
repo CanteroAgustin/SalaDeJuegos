@@ -30,6 +30,9 @@ export class MenuCardComponent implements OnInit {
       case 'PPT':
         alert("No implementado aun");
         break;
+      case 'Quiz':
+        this.router.navigate(['/Juegos/Quiz']);
+        break;
     }
   }
 }

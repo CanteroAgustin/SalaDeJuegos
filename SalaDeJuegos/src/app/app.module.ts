@@ -67,6 +67,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { RegistroDialogComponent } from './componentes/registro-dialog/registro-dialog.component';
 import { TableroComponent } from './componentes/tablero/tablero.component';
 import { AuthGuard } from './AuthGuard';
+import { QuizComponent } from './componentes/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { AuthGuard } from './AuthGuard';
     SexoPipe,
     RegistroDialogComponent,
     TableroComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,

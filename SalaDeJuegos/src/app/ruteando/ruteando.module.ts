@@ -22,6 +22,7 @@ import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/lista
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { AuthGuard } from '../AuthGuard';
+import { QuizComponent } from '../componentes/quiz/quiz.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -43,7 +44,8 @@ const MiRuteo = [
       { path: 'Adivina', component: AdivinaElNumeroComponent },
       { path: 'AdivinaMasListado', component: AdivinaMasListadoComponent },
       { path: 'AgilidadaMasListado', component: AgilidadMasListadoComponent },
-      { path: 'Agilidad', component: AgilidadAritmeticaComponent }],
+      { path: 'Agilidad', component: AgilidadAritmeticaComponent },
+      { path: 'Quiz', component: QuizComponent }],
     canActivate:
       [AuthGuard]
   },

@@ -1,0 +1,44 @@
+<div class="container">
+    <div>
+        <div class="height20"></div>
+
+        <div class="trivia"></div>
+
+        <div class="wraper" *ngIf="mostrarPreguntas">
+
+            <div class="center">
+                <mat-form-field>
+                    <textarea matInput readonly [(ngModel)]="pregunta" name="pregunta"></textarea>
+                </mat-form-field>
+                <input [ngClass]="{ 'incorrecta':res1 === 'incorrecta', 
+                        'correcta':res1 === 'correcta'}" matInput readonly [(ngModel)]=" r1.desc" name="r1"
+                    (click)="validarRespuesta(r1)" [disabled]="disable">
+                <input [ngClass]="{ 'incorrecta':res2 === 'incorrecta', 
+                        'correcta':res2 === 'correcta'}" matInput readonly [(ngModel)]="r2.desc" name="r2"
+                    (click)="validarRespuesta(r2)" [disabled]="disable">
+                <input [ngClass]="{ 'incorrecta':res3 === 'incorrecta', 
+                        'correcta':res3 === 'correcta'}" matInput readonly [(ngModel)]="r3.desc" name="r3"
+                    (click)="validarRespuesta(r3)" [disabled]="disable">
+            </div>
+            
+
+        </div>
+        <div class="divButtonNext" *ngIf="prox">
+                <button mat-button (click)="next()">
+                    <mat-icon class="play">navigate_next</mat-icon>
+                </button>
+            </div>
+        <div class="divButton" *ngIf="playOk">
+            <button mat-button (click)="play()">
+                <mat-icon class="play">play_circle_outline</mat-icon>
+            </button>
+        </div>
+
+
+        <div class="textCenter">
+            <h1>Puntos acumulados: {{puntos}}</h1>
+        </div>
+    </div>
+
+
+</div>
