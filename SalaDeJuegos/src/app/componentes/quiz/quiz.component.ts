@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-quiz',
@@ -21,8 +22,9 @@ export class QuizComponent implements OnInit {
     private mostrarPreguntas = false;
     private playOk = true;
     private prox = false;
+    private fin = false;
 
-    constructor() { }
+    constructor( private router: Router) { }
 
     ngOnInit() {
         this.preguntas = [
@@ -119,7 +121,7 @@ export class QuizComponent implements OnInit {
 
     }
 
-    play(){
+    play() {
         this.mostrarPreguntas = true;
         this.playOk = false;
     }
@@ -128,7 +130,7 @@ export class QuizComponent implements OnInit {
         this.disable = true;
         this.prox = true;
         if (datos.val) {
-            this.puntos += 1; 
+            this.puntos += 1;
             this.mostrarCorrecta(datos);
         } else {
             this.mostrarTodo(datos);
@@ -164,15 +166,45 @@ export class QuizComponent implements OnInit {
         }
     }
 
-    next(){
+    next() {
         this.indicePregunta += 1;
+        if (undefined != this.preguntas[this.indicePregunta]) {
+            this.pregunta = this.preguntas[this.indicePregunta].pregunta;
+            this.r1 = this.preguntas[this.indicePregunta].respuestas.a;
+            this.r2 = this.preguntas[this.indicePregunta].respuestas.b;
+            this.r3 = this.preguntas[this.indicePregunta].respuestas.c;
+            this.disable = false;
+            this.res1 = "";
+            this.res2 = "";
+            this.res3 = "";
+        } else {
+            this.fin = true;
+        }
+
+    }
+
+    Otra() {
+        this.indicePregunta = 0;
         this.pregunta = this.preguntas[this.indicePregunta].pregunta;
         this.r1 = this.preguntas[this.indicePregunta].respuestas.a;
         this.r2 = this.preguntas[this.indicePregunta].respuestas.b;
         this.r3 = this.preguntas[this.indicePregunta].respuestas.c;
+        this.puntos = 0;
         this.disable = false;
         this.res1 = "";
         this.res2 = "";
         this.res3 = "";
+        this.prox = false;
+        this.fin = false;
+    }
+
+    Terminar() {
+        this.Otra();
+        this.mostrarPreguntas = false;
+        this.playOk = true;
+    }
+
+    Salir() {
+        this.router.navigate(['/Juegos']);
     }
 }

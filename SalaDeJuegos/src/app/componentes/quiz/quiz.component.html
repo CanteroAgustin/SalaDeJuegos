@@ -20,20 +20,33 @@
                         'correcta':res3 === 'correcta'}" matInput readonly [(ngModel)]="r3.desc" name="r3"
                     (click)="validarRespuesta(r3)" [disabled]="disable">
             </div>
-            
+
 
         </div>
+
         <div class="divButtonNext" *ngIf="prox">
-                <button mat-button (click)="next()">
-                    <mat-icon class="play">navigate_next</mat-icon>
-                </button>
-            </div>
+            <button mat-button (click)="next()">
+                <mat-icon class="play">navigate_next</mat-icon>
+            </button>
+        </div>
+
         <div class="divButton" *ngIf="playOk">
             <button mat-button (click)="play()">
                 <mat-icon class="play">play_circle_outline</mat-icon>
             </button>
         </div>
 
+        <div class="divButtons" *ngIf="fin">
+            <button mat-raised-button (click)="Otra()">
+                Otra vez
+            </button>
+            <button mat-raised-button (click)="Terminar()">
+                Terminar
+            </button>
+            <button mat-raised-button (click)="Salir()">
+                Salir
+            </button>
+        </div>
 
         <div class="textCenter">
             <h1>Puntos acumulados: {{puntos}}</h1>
