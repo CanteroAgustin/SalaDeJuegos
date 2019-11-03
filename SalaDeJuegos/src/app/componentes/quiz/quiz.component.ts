@@ -113,7 +113,7 @@ export class QuizComponent implements OnInit {
                 }
             },
         ]
-
+        this.preguntas = this.doShuffle(this.preguntas);
         this.pregunta = this.preguntas[this.indicePregunta].pregunta;
         this.r1 = this.preguntas[this.indicePregunta].respuestas.a;
         this.r2 = this.preguntas[this.indicePregunta].respuestas.b;
@@ -184,6 +184,7 @@ export class QuizComponent implements OnInit {
     }
 
     Otra() {
+        this.preguntas = this.doShuffle(this.preguntas);
         this.indicePregunta = 0;
         this.pregunta = this.preguntas[this.indicePregunta].pregunta;
         this.r1 = this.preguntas[this.indicePregunta].respuestas.a;
@@ -207,4 +208,21 @@ export class QuizComponent implements OnInit {
     Salir() {
         this.router.navigate(['/Juegos']);
     }
+
+    doShuffle(array) {
+        let m = array.length, t, i;
+      
+        // While there remain elements to shuffle
+        while (m) {
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * m--);
+      
+          // And swap it with the current element.
+          t = array[m];
+          array[m] = array[i];
+          array[i] = t;
+        }
+      
+        return array;
+      }
 }
