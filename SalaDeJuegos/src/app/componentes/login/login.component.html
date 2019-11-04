@@ -22,14 +22,18 @@
             Comprobando - {{progreso}}%
           </div>
         </div>
-        <input type="checkbox" checked="checked"> Recordar mis datos
-
+        <!--input type="checkbox" checked="checked"> Recordar mis datos-->
+        <p class="error" *ngIf="isError">{{textError}}</p>
 
         <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="aceptbtn" (click)="UserMock()">Usuario Mock</button>
+        </div>
+
+        <!--div class="container" style="background-color:#f1f1f1">
           <button type="button" class="cancelbtn">Cancelar</button>
           <button type="button" class="aceptbtn" routerLink="/Registro">Registrarse</button>
           <span class="psw">Te olvidaste <a href="#">la clave?</a></span>
-        </div>
+        </div-->
       </form>
     </div>
   </div>

@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   logeando = true;
   ProgresoDeAncho: string;
   loginForm;
-
+  textError: string;
+  isError: boolean;
   clase = "progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
@@ -51,17 +52,25 @@ export class LoginComponent implements OnInit {
   login(datos) {
     this.usuarioService.loginEnBackend(datos).subscribe(token => {
       this.authServiceService.setToken(token);
-      
-      if(this.authServiceService.isValidToken()){
+
+      if (this.authServiceService.isValidToken()) {
         localStorage.setItem('loggedIn', 'true');
         localStorage.setItem('usuarioLogeado', datos.userName);
         this.router.navigate(['/Principal']);
-      }     
+      }
+    }, error => {
+      if (error.status == 401) {
+        this.textError = "Los datos ingresados son incorrectos";
+        this.isError = true;
+        this.logeando = true;
+        this.progreso = 0;
+      }
+
     });
   }
 
   MoverBarraDeProgreso(data) {
-
+    this.isError = false;
     this.logeando = false;
     this.clase = "progress-bar progress-bar-danger progress-bar-striped active";
     this.progresoMensaje = "NSA spy...";
@@ -76,6 +85,11 @@ export class LoginComponent implements OnInit {
       }
     });
     //this.logeando=true;
+  }
+
+  UserMock() {
+    this.loginForm.controls['userName'].setValue('Agustin721');
+    this.loginForm.controls['password'].setValue('1234');
   }
 
 }
