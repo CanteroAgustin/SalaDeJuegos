@@ -17,6 +17,7 @@
 
 textarea{
     background-color: cornsilk;
+    width: 305px;
 }
 
 textarea.mat-input-element{
@@ -36,7 +37,7 @@ textarea.mat-input-element{
     right: 0;
     bottom: 0;
     left: 0;
-    width: 210px;
+    width: 350px;
     height: 310px;
     padding-left: 15px;
     background-color: #464646;
@@ -44,7 +45,7 @@ textarea.mat-input-element{
 
 .center{
     margin: 0 auto;
-    width: 200px;
+    width: 320px;
     height: 300px; 
 }
 
@@ -53,7 +54,7 @@ input.mat-input-element{
     background-color: darkkhaki;
     height: 30px;
     margin: 10px 0;
-    width: 90%;
+    width: 95%;
     text-align: center;
 }
 
@@ -104,18 +105,18 @@ input.mat-input-element:hover {
 }
 
 .divButton{
-    width: 8%;
+    width: 9%;
     margin: 0 auto;
 }
 
 .divButtonNext{
     top: 90%;
     position: absolute;
-    left: 58%;
+    left: 65%;
 }
 
 .divButtons{
-    width: 22%;
+    width: 32%;
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -123,6 +124,9 @@ input.mat-input-element:hover {
 .mat-raised-button{
     margin: 5px;
     background-color: chocolate;
-    width: 100px;
+    width: 150px;
 }
 
+.mat-input-element{
+    max-width: 200%;
+}

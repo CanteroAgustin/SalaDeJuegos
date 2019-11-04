@@ -10,13 +10,13 @@
                 <mat-form-field>
                     <textarea matInput readonly [(ngModel)]="pregunta" name="pregunta"></textarea>
                 </mat-form-field>
-                <input [ngClass]="{ 'incorrecta':res1 === 'incorrecta', 
+                <input text-wrap [ngClass]="{ 'incorrecta':res1 === 'incorrecta', 
                         'correcta':res1 === 'correcta'}" matInput readonly [(ngModel)]=" r1.desc" name="r1"
                     (click)="validarRespuesta(r1)" [disabled]="disable">
-                <input [ngClass]="{ 'incorrecta':res2 === 'incorrecta', 
+                <input text-wrap [ngClass]="{ 'incorrecta':res2 === 'incorrecta', 
                         'correcta':res2 === 'correcta'}" matInput readonly [(ngModel)]="r2.desc" name="r2"
                     (click)="validarRespuesta(r2)" [disabled]="disable">
-                <input [ngClass]="{ 'incorrecta':res3 === 'incorrecta', 
+                <input text-wrap [ngClass]="{ 'incorrecta':res3 === 'incorrecta', 
                         'correcta':res3 === 'correcta'}" matInput readonly [(ngModel)]="r3.desc" name="r3"
                     (click)="validarRespuesta(r3)" [disabled]="disable">
             </div>

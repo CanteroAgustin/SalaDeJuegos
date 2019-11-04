@@ -29,7 +29,7 @@ export class QuizComponent implements OnInit {
     ngOnInit() {
         this.preguntas = [
             {
-                'pregunta': "Cual es el lenguaje que ha revolucionado la web?",
+                'pregunta': "¿Cual es el lenguaje que ha revolucionado la web?",
                 respuestas: {
                     a: {
                         desc: "Javascript", val: true
@@ -43,7 +43,7 @@ export class QuizComponent implements OnInit {
                 }
             },
             {
-                'pregunta': "5 + 5?",
+                'pregunta': "¿5 + 5?",
                 respuestas: {
                     a: {
                         desc: "1", val: false
@@ -71,16 +71,16 @@ export class QuizComponent implements OnInit {
                 }
             },
             {
-                'pregunta': "int, char, float, string y boolean son?",
+                'pregunta': "¿int, char, float, string y boolean son?",
                 respuestas: {
                     a: {
-                        desc: "Funciones de acceso a datos", val: false
+                        desc: "Funciones de acceso a datos.", val: false
                     },
                     b: {
-                        desc: "Sentencias de control", val: false
+                        desc: "Sentencias de control.", val: false
                     },
                     c: {
-                        desc: "Tipos de datos", val: true
+                        desc: "Tipos de datos.", val: true
                     },
                 }
             },
@@ -99,16 +99,86 @@ export class QuizComponent implements OnInit {
                 }
             },
             {
-                'pregunta': "Imperativo, declarativo y orientado a objetos son?",
+                'pregunta': "¿Cuál de los siguientes es un IDE de programación?",
                 respuestas: {
                     a: {
-                        desc: "Modos de compilar el código fuente de un programa de ordenador", val: false
+                        desc: "Eclipse", val: true
                     },
                     b: {
-                        desc: "Modos de definir el pseudocódigo de un programa de ordenador", val: false
+                        desc: "FTP", val: false
                     },
                     c: {
-                        desc: "Paradigmas de programación", val: true
+                        desc: "Notepad++", val: false
+                    },
+                }
+            },
+            {
+                'pregunta': "¿Que es un algoritmo?",
+                respuestas: {
+                    a: {
+                        desc: "La idea que sustenta un programa.", val: true
+                    },
+                    b: {
+                        desc: "El valor que se obtiene de la información.", val: false
+                    },
+                    c: {
+                        desc: "Un lenguaje de programación.", val: false
+                    },
+                }
+            },
+            {
+                'pregunta': "¿Que extension tiene un clase java compilada?",
+                respuestas: {
+                    a: {
+                        desc: ".java", val: false
+                    },
+                    b: {
+                        desc: ".class", val: true
+                    },
+                    c: {
+                        desc: ".hex", val: false
+                    },
+                }
+            },
+            {
+                'pregunta': "¿Cuál es el siguiente paso después de plantear el algoritmo y el pseudocódigo?",
+                respuestas: {
+                    a: {
+                        desc: "Escribirlo en un lenguaje de programacion.", val: true
+                    },
+                    b: {
+                        desc: "Escribirlo en lenguaje de maquina.", val: false
+                    },
+                    c: {
+                        desc: "Escribirlo en codigo de lenguaje.", val: false
+                    },
+                }
+            },
+            {
+                'pregunta': "¿Cada repetición del cuerpo del bucle se denomina?",
+                respuestas: {
+                    a: {
+                        desc: "Retroalimentacion.", val: false
+                    },
+                    b: {
+                        desc: "Iteracion.", val: true
+                    },
+                    c: {
+                        desc: "Compilacion.", val: false
+                    },
+                }
+            },
+            {
+                'pregunta': "¿La sentencia case se utiliza para?",
+                respuestas: {
+                    a: {
+                        desc: "Elegir entre las mismas alternativas.", val: false
+                    },
+                    b: {
+                        desc: "Para convertir datos constantes a variables.", val: false
+                    },
+                    c: {
+                        desc: "Elegir entre diferentes alternativas.", val: true
                     },
                 }
             },
