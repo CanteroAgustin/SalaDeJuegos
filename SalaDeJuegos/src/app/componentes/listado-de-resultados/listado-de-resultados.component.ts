@@ -1,5 +1,6 @@
-
-import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { Router } from '@angular/router';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -7,14 +8,32 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
   styleUrls: ['./listado-de-resultados.component.css']
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
- listado: Array<any>;
 
+  listado: any;
+  loggedIn = false;
+  userName = "";
 
-  constructor() {
-   }
+  constructor(private usuarioService: UsuarioService, private router: Router) {
+  }
 
   ngOnInit() {
+    let logeado = this.usuarioService.getUsuarioLogeado();
+    if (logeado) {
+      this.loggedIn = true;
+      this.userName = logeado;
+    }
+    this.TraerTodos();
+  }
+
+  TraerTodos() {
+    //alert("totos");
+    //this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{
+    //console.info("jugadores listado",(data));
+    //this.listado= data;
+    //})
+    this.usuarioService.getUsuarios().subscribe(usuarios => {
+      this.listado = usuarios;
+    });
 
   }
 
@@ -22,4 +41,9 @@ export class ListadoDeResultadosComponent implements OnInit {
     console.info(this.listado);
   }
 
+  procesarCerrar(){
+    this.loggedIn = false;
+    this.usuarioService.deslogear();
+    this.router.navigate(['/Principal']);
+  }
 }

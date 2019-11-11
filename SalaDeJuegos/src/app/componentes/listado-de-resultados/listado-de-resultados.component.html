@@ -1,25 +1,40 @@
-<!--div *ngFor="let juego of listado">
+<app-cabecera [loggedIn]="loggedIn" [userName]="userName" (logOut)="procesarCerrar($event)"> </app-cabecera>
 
-<p> {{juego.nombre}} </p>
-<p> {{juego.jugador}} </p>
+<div class="container">
+  <div style="overflow-x:auto;">
 
-</div-->
-
-<table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Juego</th>
-        <th>Jugador</th>
-        <th>Resultado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let juego of listado">
-        <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
-      </tr>
-     
-    </tbody>
-  </table>
+    <div *ngIf='loggedIn' class="padding-top-50">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Listado de resultados.</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Nombre de usuario</th>
+                <th>Trivia</th>
+                <th>Adivinar el numero</th>
+                <th>Piedra, papel o tijera</th>
+                <th>Agilidad mental</th>
+                <th>Anagrama</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let jugador of listado">
+                <td>{{jugador.userName}} </td>
+                <td>{{jugador.trivia}} </td>
+                <td>{{jugador.adivina}} </td>
+                <td>{{jugador.ppp}} </td>
+                <td>{{jugador.velocidad}} </td>
+                <td>{{jugador.anagrama}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

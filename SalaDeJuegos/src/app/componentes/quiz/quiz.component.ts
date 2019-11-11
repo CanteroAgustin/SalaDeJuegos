@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioService } from '../../servicios/usuario.service';
+import { Usuario } from 'src/app/clases/usuario';
+
+const JUEGO_ID: number = 1;
 
 @Component({
     selector: 'app-quiz',
@@ -23,8 +27,9 @@ export class QuizComponent implements OnInit {
     private playOk = true;
     private prox = false;
     private fin = false;
+    private jugador: Usuario; ;
 
-    constructor( private router: Router) { }
+    constructor(private router: Router, private usuarioService: UsuarioService) { }
 
     ngOnInit() {
         this.preguntas = [
@@ -189,6 +194,7 @@ export class QuizComponent implements OnInit {
         this.r2 = this.preguntas[this.indicePregunta].respuestas.b;
         this.r3 = this.preguntas[this.indicePregunta].respuestas.c;
 
+        this.jugador = JSON.parse(this.usuarioService.getUsuarioLogeadoCompleto())
     }
 
     play() {
@@ -249,6 +255,8 @@ export class QuizComponent implements OnInit {
             this.res3 = "";
         } else {
             this.fin = true;
+            this.prox = false;
+            this.calcularPuntos();
         }
 
     }
@@ -281,18 +289,24 @@ export class QuizComponent implements OnInit {
 
     doShuffle(array) {
         let m = array.length, t, i;
-      
+
         // While there remain elements to shuffle
         while (m) {
-          // Pick a remaining element…
-          i = Math.floor(Math.random() * m--);
-      
-          // And swap it with the current element.
-          t = array[m];
-          array[m] = array[i];
-          array[i] = t;
+            // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
+
+            // And swap it with the current element.
+            t = array[m];
+            array[m] = array[i];
+            array[i] = t;
         }
-      
+
         return array;
-      }
+    }
+
+    calcularPuntos() {
+        this.usuarioService.saveScore(this.jugador.id, this.puntos, null, null, null, null).subscribe(data =>{
+            console.log(JSON.stringify(data));
+        });
+    }
 }

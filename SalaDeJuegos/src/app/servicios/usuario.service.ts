@@ -8,12 +8,10 @@ export class UsuarioService {
 
   constructor(private miHttp: MiHttpService) { }
 
-  //url = "https://quiet-tor-05306.herokuapp.com/users"; 
-  //url = "http://localhost/TP_FINAL_PROG3_CANTERO/usuario";
   url = "http://agustincantero.com/UtnFRA/Laboratorio4/ApiComanda";
 
   getUsuarios() {
-    return this.miHttp.httpGetO(this.url);
+    return this.miHttp.httpGetO(this.url + "/usuario");
   }
 
   registrarUsuario(data) {
@@ -24,24 +22,8 @@ export class UsuarioService {
     return localStorage.getItem('usuarioLogeado');
   }
 
-  loggear(userName, password) {
-    let promise = new Promise((resolve, reject) => {
-      this.getUsuarios().subscribe(data => {
-        let ok = false;
-        for (let i = 0; i < Object.keys(data).length; i++) {
-          if (userName === data[i].userName && password === data[i].password) {
-            localStorage.setItem('usuarioLogeado', data[i].nombre);
-            let usuarioLogeado = this.getUsuarioLogeado();
-            resolve(usuarioLogeado);
-            ok = true;
-          }
-        }
-        if (!ok) {
-          reject(new Error("No se pudo loggear"));
-        }
-      });
-    });
-    return promise;
+  getUsuarioLogeadoCompleto() {
+    return localStorage.getItem('usuarioLogeadoCompleto');
   }
 
   loginEnBackend(loginData) {
@@ -55,5 +37,17 @@ export class UsuarioService {
   deslogear() {
     localStorage.setItem('loggedIn', 'false');
     localStorage.removeItem('usuarioLogeado');
+  }
+
+  saveScore(jugador: number, trivia: number, adivina: number, ppp: number, velocidad: number, anagrama: number){
+    let datos = {
+      id: jugador,
+      trivia: trivia,
+      adivina: adivina,
+      ppp: ppp,
+      velocidad: velocidad,
+      anagrama: anagrama
+    }
+    return this.miHttp.httpPut(this.url + "/usuario", datos);
   }
 }

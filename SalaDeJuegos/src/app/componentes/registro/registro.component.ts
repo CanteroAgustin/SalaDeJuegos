@@ -39,7 +39,7 @@ export class RegistroComponent implements OnInit {
     console.info('Datos ingresados en el registro: ', JSON.stringify(loginData));
     
     this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
-      this.usuarioService.loggear(loginData.userName, loginData.password).then(data =>{
+      this.usuarioService.loginEnBackend(loginData).subscribe(data =>{
         localStorage.setItem('loggedIn', 'true');
         this.router.navigate(['/Principal']);
       });

@@ -39,16 +39,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  Entrar(data) {
-    this.usuarioService.loggear(data.usuario, data.clave).then(data => {
-      this.authServiceService.setToken(JSON.stringify(data));
-      localStorage.setItem('loggedIn', 'true');
-      this.router.navigate(['/Principal']);
-    }).catch(error => {
-      console.log(error);
-    });
-  }
-
   login(datos) {
     this.usuarioService.loginEnBackend(datos).subscribe(token => {
       this.authServiceService.setToken(token);
@@ -56,6 +46,14 @@ export class LoginComponent implements OnInit {
       if (this.authServiceService.isValidToken()) {
         localStorage.setItem('loggedIn', 'true');
         localStorage.setItem('usuarioLogeado', datos.userName);
+        this.usuarioService.getUsuarios().subscribe(usuarios => {
+          for (let i = 0; i < Object.keys(usuarios).length; i++) {
+            if (datos.userName === usuarios[i].userName && datos.password === usuarios[i].password) {
+              localStorage.setItem('usuarioLogeadoCompleto', JSON.stringify(usuarios[i]));
+            }
+          }
+        });
+
         this.router.navigate(['/Principal']);
       }
     }, error => {
@@ -91,5 +89,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.controls['userName'].setValue('Agustin721');
     this.loginForm.controls['password'].setValue('1234');
   }
+
+
 
 }
