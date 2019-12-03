@@ -2,7 +2,11 @@
 <div class="container">
   <div class="contain">
     <h1>Registro de usuario</h1>
-    <div>
+    <div *ngIf=(registrado) class="aviso">
+      <h3>Registro completo...</h3>
+      <h3>Hace click arriba en 'Ingresar' para logearte en la aplicacion.</h3>
+    </div>
+    <div *ngIf=(!registrado)>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
 
         <label><b>Nombre</b></label>

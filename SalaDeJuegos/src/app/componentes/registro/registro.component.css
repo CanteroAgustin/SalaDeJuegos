@@ -29,6 +29,7 @@ button {
     background-attachment: fixed;
     background-size: cover;
     background-color: #464646;
+    min-height: 550px;
 }
 
 .contain{
@@ -42,4 +43,8 @@ h1 {
     padding-top: 10px;
     color: chocolate;
     text-align: center;
+}
+
+.aviso{
+    color: limegreen;
 }

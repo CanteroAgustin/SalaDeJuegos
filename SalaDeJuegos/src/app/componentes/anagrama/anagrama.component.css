@@ -1,0 +1,78 @@
+.container{
+    min-height: 408px;
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.jugar{
+    text-align: center;
+    color: limegreen;
+}
+
+.header{
+    background-image: url(../../../assets/imagenes/anagrama.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100px;
+    padding-top: 20px;
+}
+
+.playButton{
+    width: 9%;
+    margin: 0 auto;
+}
+
+.divButtons{
+    width: 32%;
+    margin: 0 auto;
+}
+
+.mat-raised-button{
+    margin: 5px;
+    background-color: chocolate;
+    width: 150px;
+}
+
+.palabraAnagramaDiv{
+    border: limegreen 1px solid;
+    margin-left: 27%; 
+    width: 200px;
+    display: inline-block;
+    padding-left: 2%;
+    background-color: navajowhite;
+}
+
+.resultadoAnagramaDiv{
+    border: limegreen 1px solid;
+    padding-left: 2%;
+    width: 200px;
+    display: inline-block;
+    background-color: navajowhite;
+}
+
+.nexoDiv{
+    padding-left: 2%;
+    width: 200px;
+    display: inline-block;
+}
+
+.reglas{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    color: limegreen;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-icon.play{
+    height:100px !important;
+    width:100px !important;
+    font-size:100px !important;
+    color:mediumblue
+}

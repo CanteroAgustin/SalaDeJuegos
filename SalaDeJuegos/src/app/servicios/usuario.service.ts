@@ -15,7 +15,7 @@ export class UsuarioService {
   }
 
   registrarUsuario(data) {
-    return this.miHttp.httpPostP(this.url, data);
+    return this.miHttp.httpPostP(this.url + "/usuario", data);
   }
 
   getUsuarioLogeado() {

@@ -1,6 +1,37 @@
 <div class="container">
 
   <div>
+    <mat-card class="clickable" (click)="Juego('Quiz')">
+      <img mat-card-image src="../../../assets/imagenes/images.jfif" alt="Quiz" ALIGN="left">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>Responde Correctamente</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Pon a prueba tus conocimientos con este juego de preguntas y respuestas.</p>
+        <p>UTN FRA </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card class="clickable" (click)="Juego('Anagrama')">
+      <img mat-card-image src="../../../assets/imagenes/anagrama.jpg" alt="Juego Anagrama" ALIGN="left">
+      <mat-card-header>
+        <mat-card-title>
+          <h3>Anagrama</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Un anagrama es una palabra o frase obtenida mediante la transposicion de otra palabra o frase.
+          Adivina la palabra oculta y suma puntos hasta convertirte en el mejor.</p>
+        <p>UTN FRA </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div>
     <mat-card class="clickable" (click)="Juego('Agilidad')">
       <img mat-card-image src="../../../assets/imagenes/mental3.jpg" alt="Juego Mental" ALIGN="left">
       <mat-card-header>
@@ -42,21 +73,6 @@
       </mat-card-header>
       <mat-card-content>
         <p>Adivinaste, el juego consiste en adivinar el numero.</p>
-        <p>UTN FRA </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <div>
-    <mat-card class="clickable" (click)="Juego('Quiz')">
-      <img mat-card-image src="../../../assets/imagenes/images.jfif" alt="Quiz" ALIGN="left">
-      <mat-card-header>
-        <mat-card-title>
-          <h3>Responde Correctamente</h3>
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Pon a prueba tus conocimientos con este juego de preguntas y respuestas.</p>
         <p>UTN FRA </p>
       </mat-card-content>
     </mat-card>

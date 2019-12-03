@@ -3,7 +3,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Subscription } from "rxjs";
 import { TimerObservable } from "rxjs/observable/TimerObservable";
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { UsuarioService } from '../../servicios/usuario.service';
+import { ErroresService } from '../../servicios/errores.service';
 import { FormBuilder } from '@angular/forms';
 
 import { AuthServiceService } from '../../servicios/auth-service.service';
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router, private usuarioService: UsuarioService,
-    private formBuilder: FormBuilder, private authServiceService: AuthServiceService) {
+    private formBuilder: FormBuilder, private authServiceService: AuthServiceService,
+    private erroresService: ErroresService) {
     this.progreso = 0;
     this.ProgresoDeAncho = "0%";
     this.loginForm = this.formBuilder.group({
@@ -62,6 +64,10 @@ export class LoginComponent implements OnInit {
         this.isError = true;
         this.logeando = true;
         this.progreso = 0;
+      } else {
+        this.erroresService.setMensaje("Ocurrio un error en el login: "+ error.message);
+        this.router.navigate(['/error']);
+        
       }
 
     });

@@ -17,7 +17,8 @@ export class RegistroComponent implements OnInit {
   loggedIn = false;
   fileToUpload: File = null;
   fd = new FormData();
-
+  registrado = false;
+  
   constructor(private dialog: MatDialog, private usuarioService: UsuarioService, private formBuilder: FormBuilder,
     private router: Router) {
     this.usuarioService.getUsuarios();
@@ -37,13 +38,20 @@ export class RegistroComponent implements OnInit {
 
   onSubmit(loginData) {
     console.info('Datos ingresados en el registro: ', JSON.stringify(loginData));
-    
+
     this.usuarioService.registrarUsuario(loginData).subscribe(datos => {
-      this.usuarioService.loginEnBackend(loginData).subscribe(data =>{
-        localStorage.setItem('loggedIn', 'true');
-        this.router.navigate(['/Principal']);
+      this.usuarioService.loginEnBackend(loginData).subscribe(() => {
+        console.info("Registro completo...");
+        this.registrado = true;
       });
-    });
+    }, error => {
+      console.log("Ocurrio un error en el registro: "+error);
+      this.router.navigate(['/error']);
+    })
+  }
+
+  irAlLogin(){
+    this.router.navigate(['/Login']);
   }
 
   openDialog() {

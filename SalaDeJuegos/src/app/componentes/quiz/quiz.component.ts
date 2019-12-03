@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../servicios/usuario.service';
 import { Usuario } from 'src/app/clases/usuario';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 const JUEGO_ID: number = 1;
 
@@ -27,9 +28,10 @@ export class QuizComponent implements OnInit {
     private playOk = true;
     private prox = false;
     private fin = false;
-    private jugador: Usuario; ;
+    private jugador: Usuario;;
 
-    constructor(private router: Router, private usuarioService: UsuarioService) { }
+    constructor(private router: Router, private usuarioService: UsuarioService,
+        private _snackBar: MatSnackBar) { }
 
     ngOnInit() {
         this.preguntas = [
@@ -305,8 +307,16 @@ export class QuizComponent implements OnInit {
     }
 
     calcularPuntos() {
-        this.usuarioService.saveScore(this.jugador.id, this.puntos, null, null, null, null).subscribe(data =>{
-            console.log(JSON.stringify(data));
-        });
+        let snackMsj="";
+        let usuario: Usuario = JSON.parse(this.usuarioService.getUsuarioLogeadoCompleto());
+        if (usuario.trivia < this.puntos) {
+            this.usuarioService.saveScore(this.jugador.id, this.puntos, null, null, null, null).subscribe(data => {
+                console.log(JSON.stringify(data));
+            });
+            snackMsj = "Felicitaciones!!! Acabas de superar tu propio record. Ahora tu puntaje es: "+this.puntos;
+        }else{
+            snackMsj = "Esta vez no alcanzo, tu puntaje anterior fue: "+usuario.trivia;
+        }
+        this._snackBar.open(snackMsj, 'Cerrar');
     }
 }

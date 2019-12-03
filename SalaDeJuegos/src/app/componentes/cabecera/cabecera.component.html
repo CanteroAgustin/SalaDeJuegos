@@ -1,51 +1,53 @@
-<a routerLink="/Principal"><img src="../../../assets/imagenes/tulo.png" class="responsive"></a>
-<mat-toolbar class="color">
-  <span class="fill-remaining-space">
-    <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="loggedIn">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <a routerLink="/Juegos" mat-menu-item>
-        <mat-icon>sports_esports</mat-icon>
-        <span>Juegos</span>
-      </a>
-      <a routerLink="/Jugadores" mat-menu-item>
-        <mat-icon>people_alt</mat-icon>
-        <span>Jugadores</span>
-      </a>
-      <a routerLink="/Listado" mat-menu-item>
-        <mat-icon>emoji_events</mat-icon>
-        <span>Resultados</span>
-      </a>
-      <a routerLink="/Configuracion" mat-menu-item>
-        <mat-icon>settings_applications</mat-icon>
-        <span>Configuracion</span>
-      </a>
-      <a mat-menu-item (click)="cerrar()">
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Salir</span>
-      </a>
-    </mat-menu>
-  </span>
-  <span class="fill-some-remaining-space">
-    <p>Agustin Cantero</p>
-    <span class="fill-some-remaining-space">
-      <a routerLink="/QuienSoy" matTooltip="¿Quien Soy?">
-        <i class="fas fa-id-badge"></i>
-      </a>
-    </span>
-    <span class="fill-some-remaining-space">
-      <a href="https://github.com/CanteroAgustin" target="_blank" matTooltip="Encuentrame en GitHub!">
-        <i class="fab fa-github-alt"></i>
-      </a>
-    </span>
-  </span>
-
-  <span *ngIf="!loggedIn" class="fill-some-remaining-space"><a routerLink="/Registro"><span
-        class="glyphicon glyphicon-user"></span>Registrarse</a></span>
-  <span *ngIf="!loggedIn" class="fill-some-remaining-space"><a routerLink="/Login"><span
-        class="glyphicon glyphicon-log-in"></span>
-      Ingresar</a></span>
-  <span *ngIf="loggedIn" class="fill-some-remaining-space">
-    Bienvenido {{userName}}</span>
-</mat-toolbar>
+<div>
+    <a routerLink="/Principal"><img src="../../../assets/imagenes/tulo.png" class="responsive"></a>
+    <mat-toolbar class="color">
+      <span class="fill-remaining-space">
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="loggedIn">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false">
+          <a routerLink="/Juegos" mat-menu-item>
+            <mat-icon>sports_esports</mat-icon>
+            <span>Juegos</span>
+          </a>
+          <a routerLink="/Jugadores" mat-menu-item>
+            <mat-icon>people_alt</mat-icon>
+            <span>Jugadores</span>
+          </a>
+          <a routerLink="/Listado" mat-menu-item>
+            <mat-icon>emoji_events</mat-icon>
+            <span>Resultados</span>
+          </a>
+          <a routerLink="/Configuracion" mat-menu-item>
+            <mat-icon>settings_applications</mat-icon>
+            <span>Configuracion</span>
+          </a>
+          <a mat-menu-item (click)="cerrar()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Salir</span>
+          </a>
+        </mat-menu>
+      </span>
+      <span class="fill-some-remaining-space">
+        <p>Agustin Cantero</p>
+        <span class="fill-some-remaining-space">
+          <a routerLink="/QuienSoy" matTooltip="¿Quien Soy?">
+            <i class="fas fa-id-badge"></i>
+          </a>
+        </span>
+        <span class="fill-some-remaining-space">
+          <a href="https://github.com/CanteroAgustin" target="_blank" matTooltip="Encuentrame en GitHub!">
+            <i class="fab fa-github-alt"></i>
+          </a>
+        </span>
+      </span>
+    
+      <span *ngIf="!loggedIn" class="fill-some-remaining-space"><a routerLink="/Registro"><span
+            class="glyphicon glyphicon-user"></span>Registrarse</a></span>
+      <span *ngIf="!loggedIn" class="fill-some-remaining-space"><a routerLink="/Login"><span
+            class="glyphicon glyphicon-log-in"></span>
+          Ingresar</a></span>
+      <span *ngIf="loggedIn" class="fill-some-remaining-space">
+        Bienvenido {{userName}}</span>
+    </mat-toolbar>
+</div>

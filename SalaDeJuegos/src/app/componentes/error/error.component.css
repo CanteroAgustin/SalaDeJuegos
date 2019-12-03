@@ -1,0 +1,32 @@
+.divError{
+    height: auto;
+    margin: 0 auto;
+    max-width: 500px;
+    border: limegreen 2px solid;
+    background-color: navajowhite;
+    text-align: center;
+}
+
+.divError p{
+    color: red;
+}
+
+.divError img{
+    padding-top: 10px;
+    width: 150px;
+    height: auto;
+}
+
+.contenedor{
+    padding-top: 40px;
+}
+
+.container{
+    min-height: 400px;
+    background-image: url(../../../assets/imagenes/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}

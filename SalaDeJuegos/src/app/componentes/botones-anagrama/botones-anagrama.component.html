@@ -1,0 +1,13 @@
+<div class="contenedor" *ngIf="mostrarMenu">
+    <div class="menu">
+        <button mat-raised-button (click)="Salir()">
+            Salir
+        </button>
+        <button mat-raised-button (click)="JugarDeNuevo()" *ngIf="jugarDeNuevoHabilitado">
+            Jugar de nuevo
+        </button>
+        <button mat-raised-button (click)="Siguiente()" *ngIf="siguienteHabilitado">
+            Siguiente
+        </button>
+    </div>
+</div>

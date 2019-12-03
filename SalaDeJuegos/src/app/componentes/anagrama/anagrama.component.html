@@ -1,3 +1,37 @@
-<p>
-  anagrama works!
-</p>
+<div class="container">
+    <div class="header">
+
+    </div>
+    <div class="contenedor">
+        <div class="playButton" *ngIf="playOk">
+            <h1 class="jugar">JUGAR</h1>
+            <button mat-button (click)="play()">
+                <mat-icon class="play">play_circle_outline</mat-icon>
+            </button>
+        </div>
+
+        <div *ngIf=(enJuego) class="reglas">
+            <h4 text-wrap>Escribe en el cuadro de la derecha la palabra buscada. La misma es un anagrama de la palabra del recuadro
+                de la izquierda.</h4>
+        </div>
+
+        <div *ngIf=(enJuego) class="palabraAnagramaDiv">
+            <app-palabras-anagrama [palabra]="palabra"></app-palabras-anagrama>
+        </div>
+
+        <div *ngIf=(enJuego) class="nexoDiv">
+            <button mat-raised-button (click)="comprobar()">
+                Comprobar
+            </button>
+        </div>
+
+        <div *ngIf=(enJuego) class="resultadoAnagramaDiv">
+            <app-solucion-anagrama (propagar)="procesaPropagar($event)"></app-solucion-anagrama>
+        </div>
+
+        <div>
+            <app-botones-anagrama [mostrarMenu]="mostrarMenu" [jugarDeNuevoHabilitado]="jugarDeNuevoHabilitado"
+             [siguienteHabilitado]="siguienteHabilitado" (siguiente)="procesarSiguiente($event)"></app-botones-anagrama>
+        </div>
+    </div>
+</div>

@@ -68,6 +68,9 @@ import { RegistroDialogComponent } from './componentes/registro-dialog/registro-
 import { TableroComponent } from './componentes/tablero/tablero.component';
 import { AuthGuard } from './AuthGuard';
 import { QuizComponent } from './componentes/quiz/quiz.component';
+import { PalabrasAnagramaComponent } from './componentes/palabras-anagrama/palabras-anagrama.component';
+import { SolucionAnagramaComponent } from './componentes/solucion-anagrama/solucion-anagrama.component';
+import { BotonesAnagramaComponent } from './componentes/botones-anagrama/botones-anagrama.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +100,9 @@ import { QuizComponent } from './componentes/quiz/quiz.component';
     RegistroDialogComponent,
     TableroComponent,
     QuizComponent,
+    PalabrasAnagramaComponent,
+    SolucionAnagramaComponent,
+    BotonesAnagramaComponent,
   ],
   imports: [
     BrowserModule,
